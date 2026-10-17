@@ -12,6 +12,7 @@ jobs:
         run: echo "Build pipeline"
 
   deploy:
+    needs: buil
     runs-on: self-hosted
     steps:
       - name: Deploy step
