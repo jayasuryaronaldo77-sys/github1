@@ -16,8 +16,8 @@ jobs:
      runs-on: [self-hosted, wsl-ubuntu]
 
      steps:
-       - name: deploy step
-         run: echo "deploy pipeline"
+       - name: Deploy step
+         run: echo "Deploy pipeline"
   
         
         
