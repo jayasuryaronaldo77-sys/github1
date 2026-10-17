@@ -5,9 +5,21 @@ on:
     branches: ["main"]
 
 jobs:
-  sample:
-    runs-on: [self-hosted. wsl-ubuntu]
+  build:
+    runs-on: [self-hosted, wsl-ubuntu]
 
     steps:
-      - name: Sample step
-        run: echo "Sample pipeline"
+      - name: Build step
+        run: echo "Build pipeline"
+        
+   deploy:
+     runs-on:[self-hosted, wsl-ubuntu]
+
+     step:
+       - name: Deploy step
+         run: echo "deploy pipeline"
+  
+    
+     
+
+
