@@ -1,0 +1,13 @@
+  name: sample pipeline
+
+  on:
+    push: 
+      branches: ["main"]
+
+  jobs: 
+    sample:
+      runs-on: ubuntu-latest
+
+      steps
+        -name: sample step
+          run: echo"sample pipeline
