@@ -1,4 +1,4 @@
-name: Node basic pipeline
+name: Node basic pipelines
 
 on:
   push:
