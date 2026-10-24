@@ -1,31 +1,30 @@
-name: Node basisc pipeline
+name: Node basic pipeline
 
 on:
   push:
     branches: ["main"]
   pull_request:
     branches: ["main"]
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   Node:
     runs-on: self-hosted
 
     steps:
-     - name: Checkout
-       uses: actions/checkout@v7
+      - name: Checkout
+        uses: actions/checkout@v4
 
-     - name: Node setup 
-     - uses: actions/setup-node@v7
-       with:
-         node-version: 24
+      - name: Node setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run the application  
-        run: |
-          node server.js &
+      - name: Run the application
+        run: node server.js &
           sleep 5
           curl http://localhost:8080
           curl http://localhost:8080/health
