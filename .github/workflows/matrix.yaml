@@ -10,7 +10,7 @@ on:
 jobs:
   Node:
     runs-on: self-hosted
-    stratagy:
+    strategy:
       matrix:
         node-version: [24,26]
 
