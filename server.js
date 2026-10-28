@@ -1,0 +1,32 @@
+const extress = require('express');
+const dotenv = require('dotenv');
+
+const envname = process.argv[2] || 'development';
+
+dotenv.config({ path: `.env.${envname}` });
+
+const app = express();
+
+const PORT = process.env.PORT || 8080;
+const APP = process.env.APP || 'development';
+
+app.get('/', (req, res) => {
+  res.send('Hello from Express! App: ' + APP);
+});
+
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'UP' });
+});
+
+app.get('/', (req, res) => {
+  res.send('hello from Express! App: ' + APP);
+});
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'UP' });
+});
+
+app.listen(PORT, () => {
+  console.log('server running on port ' + 
+PORT);
+});
+
