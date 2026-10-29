@@ -1,7 +1,7 @@
 FROM node:alpine
 WORKDIR /app
-COPY ..
+COPY . .
 RUN npm install
 EXPOSE 8080
 ENTRYPOINT ["node"]
-CMD ["volume.js", "development"]
+CMD ["server.js", "development"]
