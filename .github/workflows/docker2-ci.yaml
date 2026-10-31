@@ -1,6 +1,7 @@
 name: Docker CI Pipeline
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main", "master" ]
   pull_request:
@@ -19,7 +20,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t node-docker-app:latest .
+          docker build -f dockerfile -t node-docker-app:latest .
 
       - name: Test run container
         run: |
